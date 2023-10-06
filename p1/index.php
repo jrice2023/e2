@@ -1,22 +1,34 @@
-<!DOCTYPE html>
-<html lang='en'>
+<?php
 
-<head>
+$moves = ['rock', 'paper', 'scissors'];
 
-    <title>Project 1</title>
-    <meta charset='utf-8'>
-    <link href=data:, rel=icon>
+// echo $moves[0]; 
+// echo $moves[1];
+// echo $moves[2];
 
-</head>
+// $move = $moves[$randomNumber];
 
-<body>
+$player1Move = $moves[rand(0, 2)];
+$player2Move = $moves[rand(0, 2)];
 
-    <h1>Project 1</h1>
-    <h2>Game Mechanics</h2>
+$player1choice = ("Player one played $player1Move.");
+$player2choice = (" Player two played $player2Move.");
 
-    <ul>
-        <li></li>
-    </ul>
-</body>
 
-</html>
+if ($player1Move == $player2Move) {
+    $results =(' Results = Tie!');
+} elseif ($player1Move == 'rock' and $player2Move == 'paper') {
+    $results = (' Results = Player 2 Wins!');
+} elseif ($player1Move == 'rock' and $player2Move == 'scissors') {
+    $results = (' Results = Player 1 Wins!');
+} elseif ($player1Move == 'paper' and $player2Move == 'rock') {
+    $results = (' Results = Player 1 Wins!');
+} elseif ($player1Move == 'paper' and $player2Move == 'scissors') {
+        $results = (' Results = Player 2 Wins!');
+    } elseif ($player1Move == 'scissors' and $player2Move == 'paper') {
+        $results = (' Results = Player 1 Wins!');
+    } elseif ($player1Move == 'scissors' and $player2Move == 'rock') {
+        $results = (' Results = Player 2 Wins!');
+    }
+
+    include 'index-view.php';

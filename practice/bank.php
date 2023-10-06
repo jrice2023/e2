@@ -1,23 +1,35 @@
 <?php
 
-# Define 4 different variables, which will
-# each represent how much a given coin is worth
-$penny_value = .01;
-$nickel_value = .05;
-$dime_value = .10;
-$quarter_value = .25;
-$halfdollar_value = .50;
+# Associative arrays
 
+// $coin_values = [
+//     "penny" => .01,
+//     "nickel" => .05,
+//     "dime" => .10,
+//     "quarters" => .25
+// ];
 
-# Define 4 more variables, which will each
-# represent how many of each coin is in the bank
-$pennies = 300;
-$nickels = 5;
-$dimes = 0;
-$quarters = 125;
-$halfdollar = 33;
+// $coin_counts = [
+//     "penny" => 100,
+//     "nickel" => 25,
+//     "dime" => 100,
+//     "quarters" => 34,
+// ];
 
-# Add up how much money is in the piggy bank
-$total = ($pennies * $penny_value) + ($nickels * $nickel_value) + ($dimes * $dime_value) + ($quarters * $quarter_value) + ($halfdollar * $halfdollar_value);
+$coins = [
+    'penny' => [100, .01],
+    'nickel' => [25, .05],
+    'dime' => [100, .10],
+    'quarter' => [34, .25]
+];
 
+$total = 0;
+
+// foreach ($coin_counts as $coin => $count) {
+//     $total = $total + ($count * $coin_values[$coin]);
+// }
+
+foreach($coins as $coin => $info) {
+    $total = $total + ($info[0] * $info [1]);
+}
 require 'bank-view.php';
