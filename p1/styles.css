@@ -1,5 +1,6 @@
 * {
     background-color: white;
+    background-color: transparent;
 }
 
 
@@ -13,10 +14,29 @@ header h1 {
     text-align: center;
 }
 
+.hero-image {
+    display: flex;
+}
+
+.hero-image img {
+    flex: 1;
+    width: 100px;
+    height: auto;
+    margin: 10px;
+}
+
 h2 {
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 10px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+
 }
 
 .game-window {

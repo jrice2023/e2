@@ -19,6 +19,8 @@ If Player A's move matches "paper" and Player B's move matches "scissors" then a
 If Player A's move matches "paper" and Player B's move matches "rock" then assign value winner to Player A
 
 Report the results of Player A's Move, Player B's move, and announce the winner to the page
+
 ## Outside resource
+Rock, paper, scissors images from unsplash.com
 
 ## Notes for instructor
