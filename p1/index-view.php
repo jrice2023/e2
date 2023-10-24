@@ -22,17 +22,35 @@
 
     <h2>Game Mechanics</h2>
     <ul>
-        <li>Played between two players; each player will choose either rock, paper, or scissors. </li>
+        <li>Played between two players; you will choose either rock, paper, or scissors. </li>
         <li>Rock wins against scissors, paper wins against rock, and scissors wins against paper.</li>
         <li>A tie results if both players choose the same object. </li>
-        <li>Refresh the page to play!</li>
+        <li>Select your object and click the play button to play!</li>
     </ul>
 
     <div class="game-window">
+        <div>
+            <form method='POST' action='index.php'>
+                <label for='playerChoice'>Choose your object!</label>
+                <select name='playerChoice' id='playerChoice'>
+                    <option>Choose one...</option>
+                    <option>rock</option>
+                    <option>paper</option>
+                    <option>scissors</option>
+                </select>
+        </div>
+        <button type='submit'>Play!</button>
+        </form>
+
         <p>
-            <?php echo $player1choice ?><?php echo $player2choice ?><?php echo $results ?>
+            <?php 
+            if (isset($player1choice) and isset($player2choice) and isset($results)) {
+                echo $player1choice, $player2choice, $results;}
+                ?>
         </p>
+
     </div>
+
 </body>
 
 </html>
