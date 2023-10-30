@@ -30,7 +30,7 @@
 
     <div class="game-window">
         <div>
-            <form method='POST' action='index.php'>
+            <form method='POST' action='process.php'>
                 <label for='playerChoice'>Choose your object!</label>
                 <select name='playerChoice' id='playerChoice'>
                     <option>Choose one...</option>
@@ -44,8 +44,11 @@
 
         <p>
             <?php 
-            if (isset($player1choice) and isset($player2choice) and isset($results)) {
-                echo $player1choice, $player2choice, $results;}
+            if (isset($player1choice) and isset($player2choice) and isset($winner)) {
+                echo $player1choice, $player2choice; 
+            if ($winner == 0) echo " Results = Tie!";
+            if ($winner == 1) echo " Results = You win!";
+            if ($winner == 2) echo " Results = Player 2 wins!"; }
                 ?>
         </p>
 
