@@ -1,6 +1,6 @@
-# Project 1
+# Project 2
 + By: Jennifer Wu Rice
-+ URL: <http://e2p1.jrice.me>
++ URL: <http://e2p2.jrice.me>
 
 ## Game planning
 Create an array of three options, rock, scissors, and paper.
