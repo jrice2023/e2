@@ -1,0 +1,12 @@
+#logo {
+    width:300px;
+}
+
+main {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
