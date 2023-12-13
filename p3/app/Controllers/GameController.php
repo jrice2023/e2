@@ -29,25 +29,25 @@ class GameController
 
 
         if ($player1Move == $player2Move) {
-            $winner = 0;
+            $won = 0;
         } elseif ($player1Move == 'rock' and $player2Move == 'scissors') {
-            $winner = 1;
+            $won = 1;
         } elseif ($player1Move == 'paper' and $player2Move == 'rock') {
-            $winner = 1;
+            $won = 1;
         } elseif ($player1Move == 'scissors' and $player2Move == 'paper') {
-            $winner = 1;
+            $won = 1;
         } else {
-            $winner = 2;
-        }
-
-        $results = [
+            $won = 2;
+        };
+        
+       $results = [
             'player1choice' => $player1choice,
             'player2choice' => $player2choice,
-            'winner' => $winner
+            'winner' => $won
         ];
 
-        
     return $this->app->view('index', ['results' => $results]);
-}
+    
+    }
 }
     

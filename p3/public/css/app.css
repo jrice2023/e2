@@ -2,6 +2,11 @@
     width:300px;
 }
 
+.container {
+      display: flex;
+      justify-content: center;
+    }
+
 main {
     max-width: 1000px;
     width: 100%;
@@ -10,3 +15,23 @@ main {
     padding-bottom: 20px;
     text-align: center;
 }
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.results {
+    font-weight:bold;
+    margin: 20px;
+}
+
+.won {
+    color: green;
+}
+
+.lose {
+    color:red;
+}
+
+

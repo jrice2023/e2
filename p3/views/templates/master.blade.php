@@ -18,9 +18,11 @@
 <body>
 
     <header>
-        <a href='/'><img id='logo' src='/images/paper.jpg' alt='{{ $app->config('app.name') }} Logo'></a>
-        <a href='/'><img id='logo' src='/images/rock.jpg' alt='{{ $app->config('app.name') }} Logo'></a>
-        <a href='/'><img id='logo' src='/images/scissors.jpg' alt='{{ $app->config('app.name') }} Logo'></a>
+        <div class='container'>
+            <a href='/'><img id='logo' src='/images/paper.jpg' alt='{{ $app->config('app.name') }} Logo'></a>
+            <a href='/'><img id='logo' src='/images/rock.jpg' alt='{{ $app->config('app.name') }} Logo'></a>
+            <a href='/'><img id='logo' src='/images/scissors.jpg' alt='{{ $app->config('app.name') }} Logo'></a>
+        </div>
         <h1>{{ $app->config('app.name') }}</h1>
     </header>
 

@@ -16,8 +16,7 @@ class ProductsController extends Controller
     }
     public function index()
     {
-        $productsObj = new Products($this->app->path('database/products.json'));
-        $products = $productsObj->getAll();
+        $products = $this->app->db()->all('products');
 
         return $this->app->view('products/index', [
             'products' => $products
@@ -28,10 +27,16 @@ class ProductsController extends Controller
     {
         $sku = $this->app->param('sku');
 
-        $product = $this->productsObj->getBySku($sku);
+       if (is_null($sku)) {
+            $this->app->redirect('/products');
+        }
 
-        if (is_null($product)) {
-            return $this->app->view('errors/404');
+        $productQuery = $this->app->db()->findByColumn('products', 'sku', '=', $sku);
+
+        if (empty($productQuery)) {
+            return $this->app->view('products/missing');
+        } else {
+            $product = $productQuery[0];
         }
 
         $reviewSaved = $this->app->old('reviewSaved');
@@ -50,11 +55,17 @@ class ProductsController extends Controller
         ]);
         
         $sku = $this->app->input('sku');
+        $product_id = $this->app->input('product_id');
         $name = $this->app->input('name');
         $review = $this->app->input('review');
 
-        return $this->app->redirect('/product?sku=' . $sku, ['reviewSaved' => true]);
+        $this->app->db()->insert('reviews', [
+            'product_id' => $product_id,
+            'name' => $name,
+            'review' => $review
+        ]);
 
+        return $this->app->redirect('/product?sku=' . $sku, ['reviewSaved' => true]);
     }
 
 }
