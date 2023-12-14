@@ -5,6 +5,6 @@ History
 @endsection
 
 @section('content')
-<h1>Game History</h1>
-<p>Return to <a href='/'>homepage</a>.
+<h2>Game History</h2>
+<p>Return to <a href='/'>Home</a>.
     @endsection

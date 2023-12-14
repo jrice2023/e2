@@ -1,10 +1,10 @@
 @extends('templates/master')
 
 @section('title')
-Details
+Round Details
 @endsection
 
 @section('content')
-<h1>Game Details</h1>
+<h2>Round Details</h2>
 <p>Return to <a href='/history'>history</a>.
     @endsection
