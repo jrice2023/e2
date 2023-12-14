@@ -46,8 +46,15 @@ class GameController
             'winner' => $won
         ];
 
-    return $this->app->view('index', ['results' => $results]);
-    
+
+        $this->app->db()->insert('rounds',[
+            'playerChoice' => $player1Move,
+            'won' => ($won) ? 1 : 0,
+            'timestamp' => date('Y-m-d H:i:s')
+        ]);
+
+
+        return $this->app->redirect('/', ['results' => $results]);
     }
 }
     

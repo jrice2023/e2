@@ -35,6 +35,7 @@ Welcome to Rock, Paper, Scissors
 </div>
 @endif
 
+
 <a href='/history'>Game history</a>.
 </p>
 @endsection
