@@ -21,6 +21,14 @@ Welcome to Rock, Paper, Scissors
     <button type='submit'>Play!</button>
 </form>
 
+@if($app->errorsExist())
+<ul class='error alert alert-danger'>
+    @foreach($app->errors() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+</ul>
+@endif
+
 @if (isset($results))
 <div class='results'>
     <p>{{ $results['player1choice'] }}{{ $results['player2choice'] }}
@@ -36,6 +44,6 @@ Welcome to Rock, Paper, Scissors
 @endif
 
 
-<a href='/history'>Game history</a>.
+<a href='/history'>Game history</a>
 </p>
 @endsection
