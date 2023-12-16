@@ -6,7 +6,7 @@ Round Details
 
 @section('content')
 <h2>Round Details</h2>
-<ul>
+<ul style="list-style-type: none;">
     <li>Round id: {{ $round['id'] }}</li>
     <li>Player's choice {{ $round['playerChoice'] }}</li>
     <li>Player {{ $round['won'] ? 'won' : 'lost' }}</li>

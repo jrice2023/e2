@@ -6,9 +6,9 @@ History
 
 @section('content')
 <h2>Game History</h2>
-<ul>
+<ul style="list-style-type: none;">
     @foreach ($rounds as $round)
-    <li><a href='/round?id={{ $round['id'] }}'>{{ $round['timestamp'] }}</a></li>
+    <li><a test='round-link' href='/round?id={{ $round['id'] }}'>{{ $round['timestamp'] }}</a></li>
     @endforeach
 </ul>
 <p>Return to <a href='/'>Home</a>.
